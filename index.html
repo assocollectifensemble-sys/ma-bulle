@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FF8A3D">
+<title>Ma bulle</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+<div id="verrou" class="verrou" hidden>
+  <div class="verrou-carte">
+    <div class="verrou-logo">🔒</div>
+    <h1>Ton code secret</h1>
+    <p class="doux">Pour que ta bulle reste à toi.</p>
+    <div class="pin-points" id="pinPoints"><i></i><i></i><i></i><i></i></div>
+    <div class="pave" id="pave"></div>
+    <p class="erreur" id="pinErreur" hidden>Ce n'est pas le bon code.</p>
+  </div>
+</div>
+
+<header class="entete">
+  <div class="marque"><span class="marque-pastille"></span><span id="titreEcran">Ma bulle</span></div>
+  <button class="btn-aide" id="btnAide" aria-label="Besoin d'aide maintenant">Besoin d'aide</button>
+</header>
+
+<main id="ecran" class="ecran" tabindex="-1"></main>
+
+<nav class="onglets" aria-label="Navigation">
+  <button data-vue="accueil" class="actif"><span class="ico">🏠</span>Accueil</button>
+  <button data-vue="journal"><span class="ico">📓</span>Journal</button>
+  <button data-vue="exercices"><span class="ico">🌬️</span>Exercices</button>
+  <button data-vue="comprendre"><span class="ico">💡</span>Comprendre</button>
+  <button data-vue="coffre"><span class="ico">🎁</span>Mon coffre</button>
+</nav>
+
+<div id="feuille" class="feuille" hidden>
+  <div class="feuille-fond" data-fermer></div>
+  <div class="feuille-carte" role="dialog" aria-modal="true">
+    <button class="feuille-x" data-fermer aria-label="Fermer">×</button>
+    <div id="feuilleContenu"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="contenus.js?v=1"></script>
+<script src="app.js?v=1"></script>
+</body>
+</html>
